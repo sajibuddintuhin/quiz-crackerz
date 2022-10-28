@@ -1,31 +1,24 @@
 import React from 'react';
-import { useLoaderData } from 'react-router-dom';
+import { Link, useLoaderData } from 'react-router-dom';
 import Quizs from '../Quizs/Quizs';
 
 const Home = () => {
-    const data = useLoaderData();
-    const quizData = data.data
-    console.log(quizData)
+    const quizData = useLoaderData()
+    const quiz = quizData.data
     return (
-        <div>
+        <div className="grid grid-cols-2 mx-10 mt-11 ">
             {
-                quizData.map(quiz =><div key={quiz.id} className="card w-96 bg-base-100 shadow-xl">
-                <h2>QUIZ:{quiz.total}</h2>
-                <figure><img src={quiz.logo} alt="Shoes" /></figure>
+                quiz.map(data=><div key={data.id}  className="card mt-10 w-96 bg-base-100 shadow-xl">
+                <h2>QUIZ:{data.total}</h2>
+                <figure><img src={data.logo} alt="Shoes" /></figure>
                 <div className="card-body">
-                    <h2 className="card-title">{quiz.name}</h2>
+                    <h2 className="card-title">{data.name}</h2>
                     <div className="card-actions justify-end">
-                    <button className="btn btn-primary">Buy Now</button>
+                    <button className="btn btn-primary"><Link to={`../Quiz/${data.id}`}>hy</Link></button>
                     </div>
                 </div>
                 </div>)
             }
-            {/* {
-                quizData.map(quiz =><Quizs
-                key={quiz.id}
-                quiz={quiz}
-                ></Quizs>)
-            } */}
              
         </div>
     );

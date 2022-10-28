@@ -10,23 +10,30 @@ const router = createBrowserRouter([
       element:<Main></Main>,
       children:[
         {
-          index:true,
-          element:<Home></Home>
+            path:'/',
+            // element:<Home></Home>
         },
         {
           path:'/home',
+          element:<Home></Home>,
           loader: ()=>{
             return fetch('https://openapi.programming-hero.com/api/quiz')
-          } ,
-          element:<Home></Home>
+          }
         },
         {
           path:'/about',
           element:<About></About>
         },
         {
-            path:'/quiz',
-            element:<Quizs></Quizs>
+            // path:'/quiz',
+            // element:<Quizs></Quizs>,
+        },
+        {
+          path:'quiz/:id',
+          element:<Quizs></Quizs>,
+          loader: ({params})=>{
+          return fetch(`https://openapi.programming-hero.com/api/quiz/${params.id}`)
+          }
         }
       ]
     },
