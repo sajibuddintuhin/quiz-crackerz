@@ -1,12 +1,11 @@
 import React from 'react';
 
-const Header = () => {
+const Quizs = () => {
     return (
         <div>
-            <nav>
-        </nav>
+           
         </div>
     );
 };
 
-export default Header;
+export default Quizs;
