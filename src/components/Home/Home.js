@@ -14,7 +14,7 @@ const Home = () => {
                 <div className="card-body">
                     <h2 className="card-title">{data.name}</h2>
                     <div className="card-actions justify-end">
-                    <button className="btn btn-primary"><Link to={`../Quiz/${data.id}`}>hy</Link></button>
+                    <button className="btn btn-primary"><Link to={`../Quiz/${data.id}`}>Start Quiz</Link></button>
                     </div>
                 </div>
                 </div>)

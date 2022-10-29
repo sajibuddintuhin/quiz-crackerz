@@ -2,6 +2,7 @@ import { createBrowserRouter } from "react-router-dom";
 import About from "../About/About";
 import Home from "../Home/Home";
 import Main from "../Main/Main";
+import Quiz from "../Quiz/Quiz";
 import Quizs from "../Quizs/Quizs";
 
 const router = createBrowserRouter([
@@ -25,8 +26,8 @@ const router = createBrowserRouter([
           element:<About></About>
         },
         {
-            // path:'/quiz',
-            // element:<Quizs></Quizs>,
+            path:'/quiz',
+            element:<Quiz></Quiz>,
         },
         {
           path:'quiz/:id',
