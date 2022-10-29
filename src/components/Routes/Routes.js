@@ -1,5 +1,7 @@
 import { createBrowserRouter } from "react-router-dom";
 import About from "../About/About";
+import Error from "../Error";
+import Header from "../Header/Header";
 import Home from "../Home/Home";
 import Main from "../Main/Main";
 import Quiz from "../Quiz/Quiz";
@@ -9,10 +11,11 @@ const router = createBrowserRouter([
     {
       path:'/',
       element:<Main></Main>,
+      errorElement:<Error></Error>,
       children:[
         {
             path:'/',
-            // element:<Home></Home>
+            element:<Header></Header>
         },
         {
           path:'/home',
@@ -27,7 +30,7 @@ const router = createBrowserRouter([
         },
         {
             path:'/quiz',
-            element:<Quiz></Quiz>,
+            // element:<Quiz></Quiz>,
         },
         {
           path:'quiz/:id',

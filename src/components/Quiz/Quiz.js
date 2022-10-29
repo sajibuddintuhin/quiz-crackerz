@@ -7,7 +7,7 @@ const Quiz = ({data}) => {
     return (
         <div className="mt-[35px]">
             <select className="select select-info  w-[700px] ">
-                <option >{question}</option>
+                <option disabled selected>{question}</option>
                 <option>{options[0]}</option>
                 <option>{options[1]}</option>
                 <option>{options[2]}</option>

@@ -1,12 +1,15 @@
 import React from 'react';
 import { Link, useLoaderData } from 'react-router-dom';
+import Header from '../Header/Header';
 import Quizs from '../Quizs/Quizs';
 
 const Home = () => {
     const quizData = useLoaderData()
     const quiz = quizData.data
     return (
-        <div className="grid grid-cols-2 mx-10 mt-11 ">
+        <div>
+            
+            <div className="grid grid-cols-2 mx-10 mt-11 ">
             {
                 quiz.map(data=><div key={data.id}  className="card mt-10 w-96 bg-base-100 shadow-xl">
                 <h2>QUIZ:{data.total}</h2>
@@ -20,6 +23,7 @@ const Home = () => {
                 </div>)
             }
              
+        </div>
         </div>
     );
 };
